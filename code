@@ -1,0 +1,292 @@
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+class tic
+{
+Frame f;
+Button b1,b2,b3,b4,b5,b6,b7,b8,b9;
+int clicked=0;
+boolean b1f=true;
+boolean b2f=true;
+boolean b3f=true;
+boolean b4f=true;
+boolean b5f=true;
+boolean b6f=true;
+boolean b7f=true;
+boolean b8f=true;
+boolean b9f=true;
+
+
+tic()
+{
+
+f= new Frame("TIC TAC TOE");
+f.addWindowListener( new WindowAdapter(){
+public void windowClosing(WindowEvent e){
+f.dispose();
+}
+});
+
+b1= new Button();
+b1.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e1)
+{
+if(b1f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b1.setLabel("X");
+b1.setEnabled(false);
+}
+else
+{
+b1.setLabel("O");
+b1.setEnabled(false);
+b1f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s);
+}
+});
+
+b2= new Button();
+b2.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e2)
+{
+if(b2f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b2.setLabel("X");
+b2.setEnabled(false);
+}
+else
+{
+b2.setLabel("O");
+b2.setEnabled(false);
+b2f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b3= new Button();
+b3.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e3)
+{
+if(b3f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b3.setLabel("X");
+b3.setEnabled(false);
+}
+else
+{
+b3.setLabel("O");
+b3.setEnabled(false);
+b3f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b4= new Button();
+b4.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e4)
+{
+if(b4f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b4.setLabel("X");
+b4.setEnabled(false);
+}
+else
+{
+b4.setLabel("O");
+b4.setEnabled(false);
+b4f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b5= new Button();
+b5.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e5)
+{
+if(b5f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b5.setLabel("X");
+b5.setEnabled(false);
+}
+else
+{
+b5.setLabel("O");
+b5.setEnabled(false);
+b5f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b6= new Button();
+b6.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e6)
+{
+if(b6f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b6.setLabel("X");
+b6.setEnabled(false);
+}
+else
+{
+b6.setLabel("O");
+b6.setEnabled(false);
+b6f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b7= new Button();
+b7.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e7)
+{
+if(b7f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b7.setLabel("X");
+b7.setEnabled(false);
+}
+else
+{
+b7.setLabel("O");
+b7.setEnabled(false);
+b7f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b8= new Button();
+b8.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e8)
+{
+if(b8f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b8.setLabel("X");
+b8.setEnabled(false);
+}
+else
+{
+b8.setLabel("O");
+b8.setEnabled(false);
+b8f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+b9= new Button();
+b9.addMouseListener(new MouseAdapter(){
+public void mouseClicked(MouseEvent e9)
+{
+if(b9f)
+{
+clicked ++;
+if(clicked%2==0)
+{
+b9.setLabel("X");
+b9.setEnabled(false);
+}
+else
+{
+b9.setLabel("O");
+b9.setEnabled(false);
+b9f=false;
+}
+}
+String s=check();
+if(s.length()!=0)
+JOptionPane.showMessageDialog(f,s); 
+}
+});
+
+f.add(b1);
+f.add(b2);
+f.add(b3);
+f.add(b4);
+f.add(b5);
+f.add(b6);
+f.add(b7);
+f.add(b8);
+f.add(b9);
+
+GridLayout gl = new GridLayout(3,3);
+f.setLayout(gl);
+f.setSize(400,400);
+f.setVisible(true);
+f.setResizable(false);
+}
+
+String check()
+{
+String winner = "";
+if(b1.getLabel()==("O") && b2.getLabel()==("O") && b3.getLabel()==("O") || b1.getLabel()==("O") && b4.getLabel()==("O") && b7.getLabel()==("O") || b7.getLabel()==("O") && b8.getLabel()==("O") && b9.getLabel()==("O") || b3.getLabel()==("O") && b6.getLabel()==("O") && b7.getLabel()==("O") || b4.getLabel()==("O") && b5.getLabel()==("O") && b6.getLabel()==("O") || b7.getLabel()==("O") && b5.getLabel()==("O") && b3.getLabel()==("O") || b1.getLabel()==("O") && b5.getLabel()==("O") && b9.getLabel()==("O") || b3.getLabel()==("O") && b6.getLabel()==("O") && b9.getLabel()==("O")||b2.getLabel()==("O") && b5.getLabel()==("O") && b8.getLabel()==("O"))
+{
+winner = "O is WINNER";
+return winner;
+}
+else if(b1.getLabel()==("X") && b2.getLabel()==("X") && b3.getLabel()==("X") || b1.getLabel()==("X") && b4.getLabel()==("X") && b7.getLabel()==("X") || b7.getLabel()==("X") && b8.getLabel()==("X") && b9.getLabel()==("X") || b3.getLabel()==("X") && b6.getLabel()==("X") && b7.getLabel()==("X") || b4.getLabel()==("X") && b5.getLabel()==("X") && b6.getLabel()==("X") || b7.getLabel()==("X") && b5.getLabel()==("X") && b3.getLabel()==("X") || b1.getLabel()==("X") && b5.getLabel()==("X") && b9.getLabel()==("X") || b3.getLabel()==("X") && b6.getLabel()==("X") && b9.getLabel()==("X")||b2.getLabel()==("X") && b5.getLabel()==("X") && b8.getLabel()==("X"))
+winner = "X is WINNER";
+return winner;
+
+}
+
+public static void main(String args[])
+{
+new tic();
+}
+}
